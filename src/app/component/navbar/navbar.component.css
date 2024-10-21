@@ -1,0 +1,48 @@
+/* Navbar styles */
+.navbar {
+    background-color: #7e8487ea; /* Couleur de fond de la navbar */
+    padding: 15px 20px; /* Espacement */
+    border-radius: 5px; /* Coins arrondis */
+  }
+  
+  .navbar .nav-link, .navbar .btn {
+    color: white; /* Couleur du texte */
+    margin-right: 15px; /* Espacement entre les éléments */
+    transition: background-color 0.3s, color 0.3s; /* Effet de transition */
+  }
+  
+  .navbar .nav-link:hover, .navbar .btn:hover {
+    background-color: #7e8487ea; /* Couleur au survol */
+    color: #ffffff; /* Couleur du texte au survol */
+  }
+  
+  /* Styles pour le sélecteur */
+  .form-select {
+    background-color: #7e8487ea; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Suppression de la bordure par défaut */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 5px; /* Espacement interne */
+    transition: background-color 0.3s; /* Effet de transition */
+  }
+  
+  .form-select:hover {
+    background-color: #7e8487ea; /* Couleur au survol */
+  }
+  
+  /* Styles pour le bouton de recherche */
+  .input-group .form-control {
+    border-radius: 5px; /* Coins arrondis */
+  }
+  
+  .input-group .input-group-text {
+    background-color: #7e8487ea; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border-radius: 0 5px 5px 0; /* Coins arrondis à droite */
+  }
+  
+  .input-group .form-control:focus {
+    box-shadow: none; /* Suppression de l'ombre par défaut */
+    border-color: #7e8487ea; /* Couleur de la bordure au focus */
+  }
+  

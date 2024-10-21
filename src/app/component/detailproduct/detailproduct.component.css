@@ -1,0 +1,18 @@
+/* detailproduct.component.css */
+.product-images {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .zoomed-image {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  img {
+    transition: transform 0.2s; /* Effet de zoom fluide */
+  }
+  

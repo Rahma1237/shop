@@ -1,0 +1,9 @@
+<div class="container py-5">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-3 mb-4 border-black shadow-sm" *ngFor="let p of products">
+      <app-product-item [product]="p"></app-product-item>
+    </div>
+  </div>
+</div>

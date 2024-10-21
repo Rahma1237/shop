@@ -1,0 +1,86 @@
+<div class="container mt-5">
+    <h2 class="text-center">Inscription</h2>
+  
+    <form (ngSubmit)="onSubmit()">
+  
+      <div class="form-group mb-3">
+        <label for="name">Nom</label>
+        <input 
+          type="text" 
+          id="name" 
+          class="form-control" 
+          [(ngModel)]="user.name" 
+          name="name" 
+          placeholder="Entrez votre nom" 
+          required>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="email">Adresse e-mail</label>
+        <input 
+          type="email" 
+          id="email" 
+          class="form-control" 
+          [(ngModel)]="user.email" 
+          name="email" 
+          placeholder="Entrez votre e-mail" 
+          required>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="password">Mot de passe</label>
+        <input 
+          type="password" 
+          id="password" 
+          class="form-control" 
+          [(ngModel)]="user.password" 
+          name="password" 
+          placeholder="Entrez votre mot de passe" 
+          required>
+      </div>
+  
+      <!-- Payment Information -->
+      <h4>Informations de paiement</h4>
+      <div class="form-group mb-3">
+        <label for="cardNumber">Numéro de carte</label>
+        <input 
+          type="text" 
+          id="cardNumber" 
+          class="form-control" 
+          [(ngModel)]="payment.cardNumber" 
+          name="cardNumber" 
+          placeholder="Numéro de carte" 
+          required>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="expirationDate">Date d'expiration (MM/AA)</label>
+        <input 
+          type="text" 
+          id="expirationDate" 
+          class="form-control" 
+          [(ngModel)]="payment.expirationDate" 
+          name="expirationDate" 
+          placeholder="MM/AA" 
+          required>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="cvv">CVV</label>
+        <input 
+          type="text" 
+          id="cvv" 
+          class="form-control" 
+          [(ngModel)]="payment.cvv" 
+          name="cvv" 
+          placeholder="CVV" 
+          required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+      <div *ngIf="!isSubscribed && !isFirst" class="submit-message typeMsgS">Inscription réussie</div>
+      <div *ngIf="isSubscribed && !isFirst" class="error-message">Inscription échouée, l'e-mail est déjà utilisé</div>
+      
+    </form>
+  </div>
+  
