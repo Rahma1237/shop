@@ -4,12 +4,14 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient } from '@angular/common/http';
 import {
   AngularFireAuth,
   AngularFireAuthModule,
 } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AuthInterceptor } from './component/auth-interceptor';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBNASGKiEwVo0sigTmKVuP5MKkdyh9UPNY',
   authDomain: 'front-d894a.firebaseapp.com',
@@ -27,5 +29,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideAuth(() => getAuth()),
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
 };

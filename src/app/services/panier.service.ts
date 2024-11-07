@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import {Product} from "../models/Product";
-import {PanierLigne} from "../models/PanierLigne";
+import { Product } from '../models/Product';
+import { PanierLigne } from '../models/PanierLigne';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PanierService {
-
-  constructor() { }
+  constructor() {}
   panier: PanierLigne[] = [];
 
   addToPanier(product: Product) {
-    const existingItem = this.panier.find(item => item.produit.id === product.id);
+    const existingItem = this.panier.find(
+      (item) => item.produit.id === product.id
+    );
 
     if (existingItem) {
       existingItem.qte++;
@@ -24,4 +25,7 @@ export class PanierService {
     return this.panier;
   }
 
+  clearPanier() {
+    this.panier = [];
+  }
 }

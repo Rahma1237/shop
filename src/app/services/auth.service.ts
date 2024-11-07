@@ -8,7 +8,7 @@ export class AuthService {
   private authoficated: boolean = false;
   isConnected: BehaviorSubject<boolean>;
   private users: Map<string, string> = new Map();
-
+  private token: string | null = null;
   constructor() {
     const initialConnectedState =
       this.getLocalStorageItem('isConnected') === 'true';
@@ -94,5 +94,18 @@ export class AuthService {
 
   public isAuth(): boolean {
     return this.authoficated;
+  }
+  // Method to set the token, possibly when user logs in
+  setToken(token: string) {
+    this.token = token;
+  }
+
+  getToken(): string | null {
+    return this.token;
+  }
+
+  // Method to check if user is authenticated
+  isAuthenticated(): boolean {
+    return this.token != null;
   }
 }

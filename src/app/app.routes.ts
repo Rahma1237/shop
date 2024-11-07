@@ -11,7 +11,6 @@ import { AutoGuardService } from './auto-guard.service';
 import { DetailproductComponent } from './component/detailproduct/detailproduct.component';
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: 'panier', component: PanierComponent, canActivate: [AuthGuardGuard] },
   { path: 'panier', component: PanierComponent },
   { path: 'searchresult/:keyword', component: SearchResultComponent },
   { path: 'category/:category', component: SearchCategoryComponent },

@@ -1,1 +1,24 @@
-<p>ordres works!</p>
+<div class="shopping-cart">
+    <h2>Votre Panier</h2>
+    <div *ngFor="let item of panierItems" class="order-item">
+      <img [src]="item.image" [alt]="item.nom" width="50">
+      <div>
+        <h4>{{ item.nom }}</h4>
+        <p>Catégorie : {{ item.categorie }}</p>
+        <p>Quantité : {{ item.quantite }}</p>
+        <p>Prix total : €{{ (item.quantite * item.prixUnitaire).toFixed(2) }}</p>
+      </div>
+    </div>
+  
+    <div class="summary">
+      <h2>Résumé du Panier</h2>
+      <p>Total : €{{ total.toFixed(2) }}</p>
+      <button (click)="validateCommande()" class="btn btn-primary">Valider la commande</button>
+    </div>
+  
+    <!-- Message de confirmation ou d'erreur -->
+    <div *ngIf="message" [ngClass]="{'success-message': messageType === 'success', 'error-message': messageType === 'error'}">
+      {{ message }}
+    </div>
+  </div>
+  

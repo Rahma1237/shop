@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/",
+    "/login",
+    "/ordres",
+    "/panier",
+    "/signup"
+  ]
+}
